@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Concepts Explorer | CSE Sem 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>☕ Java Master Guide<br><span style="font-size:0.8rem; color:#94a3b8;">B.Tech CSE 1st Sem</span></h2>
+        <button class="nav-btn active" onclick="showSection('intro', event)">Intro & OOP</button>
+        <button class="nav-btn" onclick="showSection('pillars', event)">The 4 Pillars</button>
+        <button class="nav-btn" onclick="showSection('execution', event)">Java Execution Flow</button>
+        <button class="nav-btn" onclick="showSection('basics', event)">Syntax & Basics</button>
+        <button class="nav-btn" onclick="showSection('control', event)">Control Flow</button>
+        <button class="nav-btn" onclick="showSection('constructors', event)">Classes & Constructors</button>
+        <button class="nav-btn" onclick="showSection('methods', event)">Methods & Modifiers</button>
+    </div>
+
+    <div class="main-content">
+        <div id="intro" class="section active">
+            <h1>Class, Object & OOP</h1>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Class</h4>
+                    <p>A user-defined data type that acts as a <span class="highlight">blueprint</span> for objects.</p>
+                </div>
+                <div class="card">
+                    <h4>Object</h4>
+                    <p>An <span class="highlight">instance</span> of a class.</p>
+                </div>
+                <div class="card">
+                    <h4>Object-Oriented Programming (OOP)</h4>
+                    <p>A programming paradigm that organizes software around objects, which combine data and methods, to
+                        improve reusability, security, and maintainability.</p>
+                </div>
+            </div>
+
+            <h3>Benefits of OOPs</h3>
+            <div class="card-grid">
+                <div class="card"><strong>1. Code reusability:</strong> Because of inheritance, existing code can be
+                    reused.</div>
+                <div class="card"><strong>2. Security:</strong> Encapsulation protects data from direct access.</div>
+                <div class="card"><strong>3. Easy maintenance:</strong> Programs are divided into classes, so finding
+                    and fixing errors becomes easier.</div>
+                <div class="card"><strong>4. Modularity:</strong> Each class works like a separate module.</div>
+                <div class="card"><strong>5. Flexibility:</strong> Polymorphism allows one interface with many
+                    implementations.</div>
+                <div class="card"><strong>6. Real-world modeling:</strong> OOP matches real-life objects, so programs
+                    become easier to understand.</div>
+            </div>
+
+            <h3>Applications of OOP</h3>
+            <ul
+                style="column-count: 2; margin-top: 15px; background: var(--card); padding: 20px 40px; border-radius: 10px;">
+                <li>Software development</li>
+                <li>GUI applications</li>
+                <li>Web applications</li>
+                <li>Mobile applications</li>
+                <li>Banking systems</li>
+                <li>Real-time systems</li>
+                <li>Simulation and gaming</li>
+                <li>Student management systems</li>
+                <li>E-commerce systems</li>
+            </ul>
+        </div>
+
+        <div id="pillars" class="section">
+            <h1>The 4 Pillars of OOP</h1>
+            <div
+                style="background: var(--card); padding: 20px; border-left: 5px solid var(--accent); margin-bottom: 20px; border-radius: 5px;">
+                <strong style="font-size: 1.2rem; color: var(--accent-hover);">Super-easy memory:</strong><br><br>
+                <span class="highlight">Abstraction</span> &rarr; hide implementation<br>
+                <span class="highlight">Encapsulation</span> &rarr; hide data<br>
+                <span class="highlight">Inheritance</span> &rarr; reuse parent features<br>
+                <span class="highlight">Polymorphism</span> &rarr; one method, many forms
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>1. Abstraction</h4>
+                    <p>The process of hiding implementation details and showing only essential features of an object.
+                    </p>
+                    <pre>abstract class Shape {
+    abstract void draw();
+}</pre>
+                </div>
+                <div class="card">
+                    <h4>2. Encapsulation</h4>
+                    <p>The process of binding data and methods into a single unit and protecting data from unauthorized
+                        access.</p>
+                    <pre>class Account {
+    private int balance = 1000;
+    void showBalance() {
+        System.out.println(balance);
+    }
+}</pre>
+                </div>
+                <div class="card">
+                    <h4>3. Inheritance</h4>
+                    <p>The mechanism by which one class acquires the properties and behaviors of another class.</p>
+                    <pre>class Animal {
+    void eat() { System.out.println("Eating"); }
+}
+class Dog extends Animal {
+    void bark() { System.out.println("Barking"); }
+}</pre>
+                </div>
+                <div class="card">
+                    <h4>4. Polymorphism</h4>
+                    <p>The ability of a method/object to take many forms.</p>
+                    <ul style="font-size: 0.95rem;">
+                        <li><strong>Overloading:</strong> Compile-time ; Same name, different parameters.</li>
+                        <li><strong>Overriding:</strong> Run-time ; Child class changes parent method.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="execution" class="section">
+            <h1>Java Execution & Architecture</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">Java is a high-level, object-oriented, secure, portable,
+                and platform-independent programming language.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Platform Independence & Portability</h4>
+                    <p>Java compiler generates bytecode, which can run on any system having JVM. Programs can be easily
+                        transferred.</p>
+                </div>
+                <div class="card">
+                    <h4>Bytecode & Security</h4>
+                    <p>Bytecode is the intermediate `.class` file. Java is secure because it avoids unsafe features and
+                        runs inside the JVM.</p>
+                </div>
+            </div>
+
+            <h3>JVM vs JIT</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>JVM (Java Virtual Machine)</h4>
+                    <ul>
+                        <li>Whole virtual machine</li>
+                        <li>Provides runtime environment</li>
+                        <li>Loads, manages, and executes bytecode</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>JIT (Just in Time) Compiler</h4>
+                    <ul>
+                        <li>Part of JVM</li>
+                        <li>Converts bytecode to machine code for speed during execution</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align:center; padding: 15px; margin-top: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 8px;">
+                <strong style="color: var(--accent-hover);">One-line memory trick:</strong> JVM runs Java, JIT speeds
+                Java.
+            </div>
+        </div>
+
+        <div id="basics" class="section">
+            <h1>Java Syntax & Basics</h1>
+            <div class="card">
+                <h4>Standard Program Structure</h4>
+                <pre>class Hello {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}</pre>
+                <p><strong>public:</strong> anywhere | <strong>static:</strong> no object needed |
+                    <strong>void:</strong> returns nothing | <strong>main:</strong> starting point | <strong>String[]
+                        args:</strong> command-line args.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Data Types</h4>
+                    <p><strong>Primitive:</strong> int, float. <strong>Non-Primitive:</strong> String, Arrays.</p>
+                </div>
+                <div class="card">
+                    <h4>Variables</h4>
+                    <p><strong>Local:</strong> in method. <strong>Instance:</strong> in class. <strong>Static:</strong>
+                        shared.</p>
+                </div>
+                <div class="card">
+                    <h4>Type Conversion vs Casting</h4>
+                    <p><strong>Conversion:</strong> Auto, small to large (Safe).<br><strong>Casting:</strong> Manual
+                        <code>(int)x</code>, large to small (May lose data).</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="control" class="section">
+            <h1>Control Flow Statements</h1>
+
+            <h3>Conditional Statements</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>if / if-else / nested if</h4>
+                    <p>Executes code block based on true/false conditions.</p>
+                    <pre>if (condition) {
+    // true block
+} else {
+    // false block
+}</pre>
+                </div>
+                <div class="card">
+                    <h4>switch statement</h4>
+                    <p>Multi-way selection based on an expression's value. <em>Note: break stops execution; without it,
+                            next cases run.</em></p>
+                    <pre>switch(val) {
+    case 1: // code
+        break;
+    default: // code
+}</pre>
+                </div>
+            </div>
+
+            <h3>Loops & Jump Statements</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Loops (for, while, do-while)</h4>
+                    <ul>
+                        <li><strong>while:</strong> checks condition first.</li>
+                        <li><strong>do-while:</strong> runs once first, checks later.</li>
+                        <li><strong>for:</strong> repeats for a fixed number of times.
+                            <code>for(init; cond; update)</code></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Jump Statements (break vs continue)</h4>
+                    <ul>
+                        <li><strong>break:</strong> stops the loop completely or terminates a switch.</li>
+                        <li><strong>continue:</strong> skips only the current iteration and moves to the next.</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align:center; padding: 15px; margin-top: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 8px;">
+                <strong style="color: var(--accent-hover);">Quick Diff:</strong> <code>if</code> is for
+                ranges/conditions, <code>switch</code> is for exact values.
+            </div>
+        </div>
+
+        <div id="constructors" class="section">
+            <h1>Classes, Objects & Constructors</h1>
+
+            <div class="card">
+                <h4>Class & Object Basics</h4>
+                <p>A class groups data members and member functions. An object is created using:
+                    <code>ClassName obj = new ClassName();</code>. Members are accessed using the dot (<code>.</code>)
+                    operator.</p>
+            </div>
+
+            <h3>Constructors</h3>
+            <p>A special member function automatically invoked when an object is created to initialize it. <strong>Same
+                    name as class, no return type.</strong></p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>Types of Constructors</h4>
+                    <ul>
+                        <li><strong>Default:</strong> Takes no arguments.</li>
+                        <li><strong>Parameterized:</strong> Takes arguments to initialize variables.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Constructor Overloading</h4>
+                    <p>Having more than one constructor with different parameter lists in the same class.</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 20px;">
+                <h4>this Keyword</h4>
+                <p>Refers to the <strong>current object</strong> of the class. Used to distinguish instance variables
+                    from local parameters with the same name.</p>
+                <pre>Student(int rollNo) {
+    this.rollNo = rollNo; // current object's var = parameter
+}</pre>
+            </div>
+
+            <h3>Pass by Value vs Reference</h3>
+            <div
+                style="background: var(--card); padding: 20px; border-left: 5px solid #10b981; margin-bottom: 20px; border-radius: 5px;">
+                <strong>Best exam line:</strong> Java supports pass by value only. For primitive data types, a copy of
+                the value is passed. For objects, a copy of the reference is passed.
+            </div>
+        </div>
+
+        <div id="methods" class="section">
+            <h1>Methods & Access Modifiers</h1>
+
+            <div class="card">
+                <h4>Methods</h4>
+                <p>A block of code that performs a specific task. Used to avoid repeating code. Methods can have no
+                    return value (<code>void</code>), have a return value (e.g., <code>int</code>), and can take
+                    parameters.</p>
+            </div>
+
+            <h3>Access Modifiers</h3>
+            <div class="card-grid">
+                <div class="card"><strong>private:</strong> Accessible only inside the same class (Most restricted).
+                </div>
+                <div class="card"><strong>default:</strong> Accessible within the same package (no keyword needed).
+                </div>
+                <div class="card"><strong>protected:</strong> Accessible within same package AND in subclasses.</div>
+                <div class="card"><strong>public:</strong> Accessible from everywhere.</div>
+            </div>
+
+            <h3>static vs final</h3>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>static Keyword</h4>
+                    <p>Means the member belongs to the <strong>class</strong>, not objects.</p>
+                    <ul>
+                        <li><strong>Variable:</strong> Shared by all objects (e.g., college name).</li>
+                        <li><strong>Method:</strong> Can be called without creating an object. Only accesses static
+                            members.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>final Keyword</h4>
+                    <p>Means something <strong>cannot be changed</strong>.</p>
+                    <ul>
+                        <li><strong>Variable:</strong> Becomes a constant.</li>
+                        <li><strong>Method:</strong> Cannot be overridden by child class.</li>
+                        <li><strong>Class:</strong> Cannot be inherited.</li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                style="text-align:center; padding: 15px; margin-top: 15px; background: rgba(59, 130, 246, 0.1); border-radius: 8px;">
+                <strong style="color: var(--accent-hover);">Memory trick:</strong> <code>static</code> = shared |
+                <code>final</code> = fixed.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
